@@ -3,31 +3,24 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-nav",
   template: `
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand d-none d-sm-block" href="#">
-        <img
-          src="/docs/4.0/assets/brand/bootstrap-solid.svg"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        />
-        Justin Bender
-      </a>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
+    <nav class="row">
+      <div class="col-sm-3 m-auto d-none d-sm-block">Justin Bender</div>
+      <div class="row col-sm-8">
+        <div class="m-auto">
+          <a href="#welcome-section">Welcome</a>
+        </div>
+        <div class="m-auto">
+          <a href="#skill-section">Skills</a>
+        </div>
+        <div class="m-auto">
+          <a href="#contact-section">Get In Touch</a>
+        </div>
+      </div>
     </nav>
   `,
-  styles: [".navbar-brand{ }"],
+  styles: [
+      "nav{ background-color: teal; height: 50px;}"
+    ],
 })
 export class AppNavComponent implements OnInit {
   constructor() {}
