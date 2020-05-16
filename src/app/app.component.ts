@@ -10,84 +10,8 @@ import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: "app-root",
-  template: `
-    <style>
-      .the-welcome-section {
-        height: 400px;
-      }
-      .the-skill-section {
-        
-      }
-      .the-contact-section {
-        height: 200px;
-      }
-      .about-justin {
-        background-color: lightBlue;
-      }
-      .demo-cards {
-        background-color:lightGray;
-        opacity: 70;
-      }
-      .justin-image {
-        background-color: blue;
-        background: #333 url(../assets/pics/justinBed.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center top;
-        min-height: 300px;
-      }
-      .skills-about {
-        min-height: 150px;
-      }
-      .skills-graphic {
-      }
-      .contact-section {
-        background-color: gray;
-      }
-    </style>
-    <div class="container-fluid">
-      <app-nav></app-nav>
-      <div class="row the-welcome-section">
-        <div
-          class="about-justin col-sm-6 col-sx-11 col-md-8"
-          id="welcome-section"
-        >
-          <p>I am going to be writing something here</p>
-        </div>
-        <div class="justin-image col-sm-6 col-md-4"></div>
-      </div>
-      <div class="row the-skill-section">
-        <div class="skills-graphic col-md-8 col-xl-5">
-          <div #skillsChart>
-
-          </div>
-        </div>
-        <div class="skills-about col-md-4 col-xl-7 card-deck" id="skill-section">
-        <div class="demo-cards m-3 col-xs-12 col-sm-11" style="">
-            <div class="card-body">
-              <h5 class="card-title">{{links.Links.flow.name}}</h5>
-              <p class="card-text">{{links.Links.flow.desc}}</p>
-              <a href="{{links.Links.flow.link}}" class="card-link">Navigate To {{links.Links.flow.name}}</a>
-            </div>
-          </div>
-          <div *ngFor="let demo of demoLinks | keyvalue" class="demo-cards m-3 col-sm-10 col-md-11 col-lg-11 col-xl-5" style="">
-            <div class="card-body">
-              <h5 class="card-title">{{ demo.key }}</h5>
-              <p class="card-text">{{demo.value.desc}}</p>
-              <a href="{{demo.value.link}}" class="card-link">Navigate To Page</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row the-demo-section">
-        <div class="demo-section" id="demo-section"></div>
-      </div>
-      <div class="spinning-shape"></div>
-      <div class="row the-contact-section">
-        <div class="contact-section" id="contact-section"></div>
-      </div>
-    </div>
-  `,
+  templateUrl: "./app.html",
+  styleUrls: ["./app.css"]
 })
 export class AppComponent implements OnInit {
   public links: any = (profileLinks as any).default;
