@@ -1,32 +1,74 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+
+import * as justinSkills from '../assets/json/justin-skills.json';
+import * as profileLinks from '../assets/json/links.json';
+
+
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center" class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <span style="display: block">{{ title }} app is running!</span>
-      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </div>
-    <h2>Here are some links to help you start: </h2>
-    <ul>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
-    
+  <app-nav></app-nav>
+  <div>Hellp</div>
+
   `,
   styles: []
 })
-export class AppComponent {
-  title = 'justinBenderResume';
+export class AppComponent implements OnInit {
+
+  public skills: any = (justinSkills as any).default;
+  public links: any = (profileLinks as any).default;
+  public cardsInView = false;
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private title: Title,
+    private meta: Meta
+  ) { }
+
+  // @HostListener('window:scroll', [])
+  //   onScroll(): void {
+  //     this.areCardsInView();
+  // }
+
+  ngOnInit() {
+    console.log(this.skills)
+    // SEO metadata
+    this.title.setTitle('Justin Bender Resume');
+    this.meta.addTag({name: 'description', content: 'Justin Bender would like to present himself to the world of opportunity.'});
+
+    // facebook metadata
+    this.meta.addTag({name: 'og:url', content: 'https://www.benderjustin.com'});
+    this.meta.addTag({name: 'og:title', content: 'Justin Bender\'s page'});
+    this.meta.addTag({name: 'og:description', content: 'Justin Bender would like to present himself to the world of opportunity.'});
+    this.meta.addTag({name: 'og:image', content: 'https://www.benderjustin.com/assets/justinb.jpg'});
+
+    // Twitter metadata
+    this.meta.addTag({name: 'twitter:card', content: 'summary'});
+    this.meta.addTag({name: 'twitter:site', content: 'https://www.benderjustin.com'});
+    this.meta.addTag({name: 'twitter:title', content: 'Justin Bender\'s page'});
+    this.meta.addTag({name: 'twitter:description', content: 'Justin Bender would like to present himself to the world of opportunity.'});
+    this.meta.addTag({name: 'twitter:text:description', content: 'Justin Bender would like to present himself to the world of opportunity.'});
+    this.meta.addTag({name: 'twitter:image', content: 'https://www.benderjustin.com/assets/justinb.jpg'});
+  }
+
+  // areCardsInView() {
+  //   const homeCards = this.document.querySelector('.top-products');
+  //   const cardBounding = homeCards.getBoundingClientRect();
+  //   if (
+  //     cardBounding.top >= 0 &&
+  //     cardBounding.left >= 0 &&
+  //     cardBounding.right <= (this.window.innerWidth || this.document.documentElement.clientWidth) &&
+  //     cardBounding.bottom <= (this.window.innerHeight || this.document.documentElement.clientHeight)
+  //   ) {
+  //     this.cardsInView = true;
+  //   }
+  // }
+
+  public goToPageTop(event) {
+    event.stopPropagation();
+    window.scrollTo(0, 0);
+  }
 }

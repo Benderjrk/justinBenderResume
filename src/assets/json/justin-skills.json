@@ -1,0 +1,43 @@
+{
+ "name": "Bender",
+ "children": [
+  {
+   "name": "Data Science",
+   "children": [
+    {"name": "Python", "value": 6000}
+   ]
+  },
+  {
+   "name": "Containers and Networking",
+   "children": [
+    {"name": "Docker", "value": 7000},
+    {"name": "Kubernetes", "value": 4000},
+    {"name": "CI/CD", "value": 5000},
+    {"name": "GitLab", "value": 5000},
+    {"name": "BitBucket", "value": 5000}
+   ]
+  },
+  {
+   "name": "Front-End",
+   "children": [
+    {"name": "Angular", "value": 8000},
+    {"name": "TypeScript", "value": 5000},
+    {"name": "JavaScript", "value": 7500},
+    {"name": "EJS", "value": 2000},
+    {"name": "D3.js", "value": 4000},
+    {"name": "Bootstrap", "value": 7000},
+    {"name": "Jquery", "value": 2000},
+    {"name": "CSS", "value": 7000}
+   ]
+  },
+  {
+   "name": "Back-End",
+   "children": [
+    {"name": "Node.js", "value": 7500},
+    {"name": "Python", "value": 5000},
+    {"name": "JavaScript", "value": 7500},
+    {"name": "TypeScript", "value": 5000}
+   ]
+  }
+ ]
+}
