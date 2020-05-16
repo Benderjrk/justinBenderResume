@@ -22,7 +22,11 @@ import { DOCUMENT } from "@angular/common";
         height: 200px;
       }
       .about-justin {
-        background-color: red;
+        background-color: lightBlue;
+      }
+      .demo-cards {
+        background-color:lightGray;
+        opacity: 70;
       }
       .justin-image {
         background-color: blue;
@@ -33,7 +37,6 @@ import { DOCUMENT } from "@angular/common";
         min-height: 300px;
       }
       .skills-about {
-        background-color: purple;
         min-height: 150px;
       }
       .skills-graphic {
@@ -54,11 +57,26 @@ import { DOCUMENT } from "@angular/common";
         <div class="justin-image col-sm-6 col-md-4"></div>
       </div>
       <div class="row the-skill-section">
-        <div class="skills-about col-md-4 col-xl-7" id="skill-section"></div>
         <div class="skills-graphic col-md-8 col-xl-5">
-        <div #skillsChart>
+          <div #skillsChart>
 
+          </div>
         </div>
+        <div class="skills-about col-md-4 col-xl-7 card-deck" id="skill-section">
+        <div class="demo-cards m-3 col-xs-12 col-sm-11" style="">
+            <div class="card-body">
+              <h5 class="card-title">{{links.Links.flow.name}}</h5>
+              <p class="card-text">{{links.Links.flow.desc}}</p>
+              <a href="{{links.Links.flow.link}}" class="card-link">Navigate To {{links.Links.flow.name}}</a>
+            </div>
+          </div>
+          <div *ngFor="let demo of demoLinks | keyvalue" class="demo-cards m-3 col-sm-10 col-md-11 col-lg-11 col-xl-5" style="">
+            <div class="card-body">
+              <h5 class="card-title">{{ demo.key }}</h5>
+              <p class="card-text">{{demo.value.desc}}</p>
+              <a href="{{demo.value.link}}" class="card-link">Navigate To Page</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row the-demo-section">
@@ -74,6 +92,8 @@ import { DOCUMENT } from "@angular/common";
 export class AppComponent implements OnInit {
   public links: any = (profileLinks as any).default;
   public cardsInView = false;
+  public onlineLinks = {}
+  public demoLinks = {}
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -87,6 +107,9 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit() {
+    this.demoLinks = this.links.Links.demos;
+    this.onlineLinks = this.links.online;
+    console.log(this.demoLinks);
     // SEO metadata
     this.title.setTitle("Justin Bender Resume");
     this.meta.addTag({

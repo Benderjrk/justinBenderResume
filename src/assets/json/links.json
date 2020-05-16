@@ -1,8 +1,46 @@
 {
     "Links":{
-        "linkedIn": "https://www.linkedin.com/in/benderjustin/",
-        "gitLab": "https://gitlab.com/BenderTheHuman",
-        "gitHub": "https://github.com/Benderjrk",
-        "flowState": "https://flowstatefly.com"
+        "online": {
+            "LinkedIn": {
+                "link": "https://www.linkedin.com/in/benderjustin/",
+                "desc": "Venture over to LinkedIn"
+            },
+            "GitLab": {
+                "link": "https://gitlab.com/BenderTheHuman",
+                "desc": "Checkout my Gitlab"
+            },
+            "GitHub": {
+                "link": "https://github.com/Benderjrk",
+                "desc": "Checkout my GitHub"
+            }
+        },
+        "demos": {
+            "Reactive Science": {
+                "link": "https://www.reactivescience.com/",
+                "desc": "Reactive Science Angular 5+, Bootstrap SPA (2018)"
+            },
+            "SkyPirates": {
+                "link": "https://www.skypirates.us/",
+                "desc": "SkyPirate Angular 5+, Bootstrap SPA (2018)"
+            },
+            "Dashboard Demo": {
+                "link": "https://sports-af1ae.firebaseapp.com/",
+                "desc": "Angular 5+ and Bootstrap Demo (2017)"
+            },
+            "C.R.U.D": {
+                "link": "https://benderjustincontact.firebaseapp.com/",
+                "desc": "Angular 5+, Bootstrap, Firebase (2017)"
+            },
+            "Simple Express Login": {
+                "link": "https://agile-falls-86764.herokuapp.com/",
+                "desc": "Simple Express server to create user logins and sign in. (2018)"
+            }
+        },
+        "flow": {
+            "name": "Flow State Flying",
+            "link": "https://flowstatefly.com",
+            "desc": "E-Commerce Start-Up Built in/with Angular 8, Angular 9, Bootstrap, Express, Firebase, Google Cloud, AWS, SPA, PWA, EJS, MySQL (2019-2020)"
+        }
+        
     }
 }
