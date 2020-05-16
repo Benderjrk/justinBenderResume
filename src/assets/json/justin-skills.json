@@ -8,7 +8,7 @@
    ]
   },
   {
-   "name": "Containers and Networking",
+   "name": "Containers",
    "children": [
     {"name": "Docker", "value": 7000},
     {"name": "Kubernetes", "value": 4000},

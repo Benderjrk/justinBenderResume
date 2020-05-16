@@ -18,6 +18,7 @@
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
     "@observablehq/notebook-runtime": "^2.0.0",
+    "@observablehq/runtime": "^4.7.0",
     "bootstrap": "^4.5.0",
     "d3": "^5.16.0",
     "font-awesome": "^4.7.0",

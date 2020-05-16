@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
 
-import { Runtime, Inspector } from "@observablehq/notebook-runtime";
-import notebook from "../assets/js/sunBurst";
+import { Runtime, Inspector } from "@observablehq/runtime";
+import notebook from "../assets/js/sunBurst.js";
 
 import * as profileLinks from "../assets/json/links.json";
 
@@ -16,7 +16,7 @@ import { DOCUMENT } from "@angular/common";
         height: 400px;
       }
       .the-skill-section {
-        height: 400px;
+        
       }
       .the-contact-section {
         height: 200px;
@@ -34,9 +34,9 @@ import { DOCUMENT } from "@angular/common";
       }
       .skills-about {
         background-color: purple;
+        min-height: 150px;
       }
       .skills-graphic {
-        background-color: black;
       }
       .contact-section {
         background-color: gray;
@@ -54,15 +54,19 @@ import { DOCUMENT } from "@angular/common";
         <div class="justin-image col-sm-6 col-md-4"></div>
       </div>
       <div class="row the-skill-section">
-        <div class="skills-about  col-sm-6 col-sx-11" id="skill-section"></div>
-        <div class="skills-graphic  col-sm-6 col-sx-11"></div>
+        <div class="skills-about col-md-4 col-xl-7" id="skill-section"></div>
+        <div class="skills-graphic col-md-8 col-xl-5">
+        <div #skillsChart>
+
+        </div>
+        </div>
+      </div>
+      <div class="row the-demo-section">
+        <div class="demo-section" id="demo-section"></div>
       </div>
       <div class="spinning-shape"></div>
       <div class="row the-contact-section">
         <div class="contact-section" id="contact-section"></div>
-      </div>
-      <div #skillsChart>
-
       </div>
     </div>
   `,
@@ -135,9 +139,14 @@ export class AppComponent implements OnInit {
 
   @ViewChild('skillsChart') skillsChart: ElementRef;
   ngAfterViewInit() {
-    Runtime.load(notebook, Inspector.into(this.skillsChart.nativeElement));
+    const runtime = new Runtime();
+    const main = runtime.module(notebook, name => {
+      
+        return new Inspector(this.skillsChart.nativeElement);
+      
+    });
   }
-
+  
   // areCardsInView() {
   //   const homeCards = this.document.querySelector('.top-products');
   //   const cardBounding = homeCards.getBoundingClientRect();

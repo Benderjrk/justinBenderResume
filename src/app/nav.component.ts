@@ -13,6 +13,9 @@ import { Component, OnInit } from "@angular/core";
           <a href="#skill-section">Skills</a>
         </div>
         <div class="m-auto">
+          <a href="#demo-section">Hosted Demos</a>
+        </div>
+        <div class="m-auto">
           <a href="#contact-section">Get In Touch</a>
         </div>
       </div>
