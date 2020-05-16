@@ -1,7 +1,9 @@
-import { Component, OnInit, Inject, HostListener } from "@angular/core";
+import { Component, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
 
-import * as justinSkills from "../assets/json/justin-skills.json";
+import { Runtime, Inspector } from "@observablehq/notebook-runtime";
+import notebook from "../assets/js/sunBurst";
+
 import * as profileLinks from "../assets/json/links.json";
 
 import { DOCUMENT } from "@angular/common";
@@ -9,15 +11,47 @@ import { DOCUMENT } from "@angular/common";
 @Component({
   selector: "app-root",
   template: `
+    <style>
+      .the-welcome-section {
+        height: 400px;
+      }
+      .the-skill-section {
+        height: 400px;
+      }
+      .the-contact-section {
+        height: 200px;
+      }
+      .about-justin {
+        background-color: red;
+      }
+      .justin-image {
+        background-color: blue;
+        background: #333 url(../assets/pics/justinBed.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        min-height: 300px;
+      }
+      .skills-about {
+        background-color: purple;
+      }
+      .skills-graphic {
+        background-color: black;
+      }
+      .contact-section {
+        background-color: gray;
+      }
+    </style>
     <div class="container-fluid">
       <app-nav></app-nav>
       <div class="row the-welcome-section">
-        <div class="about-justin col-sm-6 col-sx-11" id="welcome-section">
+        <div
+          class="about-justin col-sm-6 col-sx-11 col-md-8"
+          id="welcome-section"
+        >
           <p>I am going to be writing something here</p>
         </div>
-        <div class="justin-image col-sm-6">
-          <img src="" alt="" />
-        </div>
+        <div class="justin-image col-sm-6 col-md-4"></div>
       </div>
       <div class="row the-skill-section">
         <div class="skills-about  col-sm-6 col-sx-11" id="skill-section"></div>
@@ -27,21 +61,13 @@ import { DOCUMENT } from "@angular/common";
       <div class="row the-contact-section">
         <div class="contact-section" id="contact-section"></div>
       </div>
+      <div #skillsChart>
+
+      </div>
     </div>
   `,
-  styles: [
-    ".the-welcome-section{ height:400px;}",
-    ".the-skill-section{ height:400px;}",
-    ".the-contact-section{ height:200px;}",
-    ".about-justin{ background-color:red;}",
-    ".justin-image{ background-color:blue;}",
-    ".skills-about{ background-color:purple;}",
-    ".skills-graphic{ background-color:black;}",
-    ".contact-section{ background-color:gray;}"
-  ],
 })
 export class AppComponent implements OnInit {
-  public skills: any = (justinSkills as any).default;
   public links: any = (profileLinks as any).default;
   public cardsInView = false;
 
@@ -57,7 +83,6 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit() {
-    console.log(this.skills);
     // SEO metadata
     this.title.setTitle("Justin Bender Resume");
     this.meta.addTag({
@@ -106,6 +131,11 @@ export class AppComponent implements OnInit {
       name: "twitter:image",
       content: "https://www.benderjustin.com/assets/justinb.jpg",
     });
+  }
+
+  @ViewChild('skillsChart') skillsChart: ElementRef;
+  ngAfterViewInit() {
+    Runtime.load(notebook, Inspector.into(this.skillsChart.nativeElement));
   }
 
   // areCardsInView() {
