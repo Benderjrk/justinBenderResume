@@ -2,24 +2,27 @@
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
-    #434343,
+    #0f0417,
     #000000
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    #434343,
+    #0f0417,
     #000000
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-title {
+    color: #501c78;
+}
+.card-text {
+    color: #889494;
 }
 .the-welcome-section {
   height: 400px;
 }
 .the-contact-section {
   height: 200px;
-}
-.demo-cards {
-  background-color: lightGray;
-  opacity: 70;
 }
 .justin-image {
   z-index: 99999;
@@ -29,15 +32,36 @@
   background-size: cover;
   background-position: center top;
   min-height: 300px;
-  opacity: 80%;
+  opacity: .75;
 }
+
+@media only screen and (max-width: 575px) {
+    .justin-image {
+      margin-top: -400px;
+      opacity: .60;
+    }
+  }
 .skills-about {
   min-height: 150px;
+  font-family: aquire-normal;
+}
+
+#skill-section {
+    padding-top: 50px;
+}
+
+.demo-cards {
+    background-color: transparent;
 }
 
 .demo-card-link {
   color: #70deda;
+  font-family: aquire-thin;
 }
+
+.demo-card-link:hover {
+    color: purple;
+  }
 
 .rotating-shape {
   z-index: 0;

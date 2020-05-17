@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "firebaseDeploy": "ng build --prod && firebase deploy",
     "build": "ng build",
     "lint": "ng lint"
   },
