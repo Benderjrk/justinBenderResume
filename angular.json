@@ -3,7 +3,7 @@
   "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "justinBenderResume": {
+    "justinBender": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/justinBenderResume",
+            "outputPath": "dist/justinBender",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -46,7 +46,9 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/sitemap.xml",
+              "src/robot.txt"
             ],
             "styles": [
               "src/styles.css",
@@ -90,21 +92,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "justinBenderResume:build"
+            "browserTarget": "justinBender:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "justinBenderResume:build:production"
+              "browserTarget": "justinBender:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "justinBenderResume:build"
+            "browserTarget": "justinBender:build"
           }
         }
       }
     }},
-  "defaultProject": "justinBenderResume"
+  "defaultProject": "justinBender"
 }

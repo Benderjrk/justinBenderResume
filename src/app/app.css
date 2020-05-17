@@ -13,7 +13,7 @@
 }
 
 .card-title {
-    color: #501c78;
+    color: #672991;
 }
 .card-text {
     color: #889494;
@@ -32,9 +32,9 @@
   background-size: cover;
   background-position: center top;
   border-radius: 80%;
-  border-top: 4px solid #501c78;
+  border-top: 4px solid #672991;
   border-bottom: 4px solid #70deda;
-  border-left: 4px solid #501c78;
+  border-left: 4px solid #672991;
   border-right: 4px solid #70deda;
   min-height: 300px;
   opacity: .60;
@@ -57,6 +57,7 @@
 
 .demo-cards {
     background-color: transparent;
+    border-top: 1px solid #70deda;
 }
 
 .demo-card-link {
@@ -65,7 +66,7 @@
 }
 
 .demo-card-link:hover {
-    color: purple;
+    color: #672991;
   }
 
 .rotating-shape {

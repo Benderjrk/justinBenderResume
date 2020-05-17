@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     this.demoLinks = this.links.Links.demos;
     this.onlineLinks = this.links.online;
     // SEO metadata
-    this.title.setTitle("Justin Bender Resume");
+    this.title.setTitle("Justin Bender");
     this.meta.addTag({
       name: "description",
       content:
