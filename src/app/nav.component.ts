@@ -3,8 +3,9 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-nav",
   template: `
+    <div class="col-sm-3 ml-auto nameLogo">Justin Bender</div>
     <nav class="row  d-none d-sm-block">
-      <div class="col-sm-3 ml-auto">Justin Bender</div>
+      
       <div class="row col-sm-8">
         <div class="m-auto">
           <a pageScroll href="#welcome-section" class="btn">Welcome</a>
@@ -22,7 +23,9 @@ import { Component, OnInit } from "@angular/core";
     </nav>
   `,
   styles: [
-      "nav{ background-color: teal;}"
+      "nav{ border-bottom: 4px solid #70deda;}",
+      ".btn{ color: #70deda;}",
+      ".nameLogo{ color: #70deda;}"
     ],
 })
 export class AppNavComponent implements OnInit {

@@ -3,6 +3,7 @@ import { Title, Meta } from "@angular/platform-browser";
 
 import { Runtime, Inspector } from "@observablehq/runtime";
 import notebook from "../assets/js/sunBurst.js";
+import notebookFirst from "../assets/js/rotating.js";
 
 import * as profileLinks from "../assets/json/links.json";
 
@@ -33,7 +34,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.demoLinks = this.links.Links.demos;
     this.onlineLinks = this.links.online;
-    console.log(this.demoLinks);
     // SEO metadata
     this.title.setTitle("Justin Bender Resume");
     this.meta.addTag({
@@ -85,12 +85,16 @@ export class AppComponent implements OnInit {
   }
 
   @ViewChild('skillsChart') skillsChart: ElementRef;
+  @ViewChild('rotatingShape') rotatingShape: ElementRef;
+  
   ngAfterViewInit() {
-    const runtime = new Runtime();
-    const main = runtime.module(notebook, name => {
-      
+    const runtimeFirst = new Runtime();
+    const mainFirst = runtimeFirst.module(notebook, name => {
         return new Inspector(this.skillsChart.nativeElement);
-      
+    });
+    const runtime = new Runtime();
+    const main = runtime.module(notebookFirst, name => {
+        return new Inspector(this.rotatingShape.nativeElement);
     });
   }
   
