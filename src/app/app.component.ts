@@ -116,12 +116,10 @@ export class AppComponent implements OnInit {
   areCardsInView() {
     const homeCards = this.document.querySelector('#demo-section');
     const cardBounding = homeCards.getBoundingClientRect();
-    console.log(cardBounding.top);
     if (
       cardBounding.top <= 180
     ) {
       this.cardsInView = true;
-      console.log(this.cardsInView);
     }
   }
 
