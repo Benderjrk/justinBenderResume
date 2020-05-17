@@ -1,6 +1,14 @@
 import { Component, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
 
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 import { Runtime, Inspector } from "@observablehq/runtime";
 import notebook from "../assets/js/sunBurst.js";
 import notebookFirst from "../assets/js/rotating.js";
@@ -12,6 +20,13 @@ import { DOCUMENT } from "@angular/common";
 @Component({
   selector: "app-root",
   templateUrl: "./app.html",
+  animations: [
+    trigger('onScrollIntoView', [
+      state('false', style({opacity: 0, transform: 'translateY(-100px)'})),
+      state('true', style({ opacity: 1, transform: 'none' })),
+      transition('false => true', animate(700))
+    ])
+  ],
   styleUrls: ["./app.css"]
 })
 export class AppComponent implements OnInit {
@@ -26,10 +41,10 @@ export class AppComponent implements OnInit {
     private meta: Meta
   ) {}
 
-  // @HostListener('window:scroll', [])
-  //   onScroll(): void {
-  //     this.areCardsInView();
-  // }
+  @HostListener('window:scroll', [])
+    onScroll(): void {
+      this.areCardsInView();
+  }
 
   ngOnInit() {
     this.demoLinks = this.links.Links.demos;
@@ -98,18 +113,17 @@ export class AppComponent implements OnInit {
     });
   }
   
-  // areCardsInView() {
-  //   const homeCards = this.document.querySelector('.top-products');
-  //   const cardBounding = homeCards.getBoundingClientRect();
-  //   if (
-  //     cardBounding.top >= 0 &&
-  //     cardBounding.left >= 0 &&
-  //     cardBounding.right <= (this.window.innerWidth || this.document.documentElement.clientWidth) &&
-  //     cardBounding.bottom <= (this.window.innerHeight || this.document.documentElement.clientHeight)
-  //   ) {
-  //     this.cardsInView = true;
-  //   }
-  // }
+  areCardsInView() {
+    const homeCards = this.document.querySelector('#demo-section');
+    const cardBounding = homeCards.getBoundingClientRect();
+    console.log(cardBounding.top);
+    if (
+      cardBounding.top <= 180
+    ) {
+      this.cardsInView = true;
+      console.log(this.cardsInView);
+    }
+  }
 
   public goToPageTop(event) {
     event.stopPropagation();

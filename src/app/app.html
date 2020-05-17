@@ -11,7 +11,7 @@
     <div class="skills-graphic col-md-7 col-xl-5">
       <div #skillsChart></div>
     </div>
-    <div class="skills-about col-md-11 col-xl-7 card-deck" id="demo-section">
+    <div [@onScrollIntoView]="cardsInView ? true : false" class="skills-about col-md-11 col-xl-7 card-deck" id="demo-section">
         <h1 class="demos-title">Live Hosted Demos</h1>
       <div class="demo-cards m-3 col-xs-12 col-sm-11">
         <div class="card-body">

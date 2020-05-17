@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
@@ -13,7 +14,8 @@ import { AppNavComponent } from './nav.component';
   ],
   imports: [
     BrowserModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
