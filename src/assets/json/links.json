@@ -1,15 +1,15 @@
 {
     "Links":{
         "online": {
-            "LinkedIn": {
+            "linkedin": {
                 "link": "https://www.linkedin.com/in/benderjustin/",
                 "desc": "Venture over to LinkedIn"
             },
-            "GitLab": {
+            "gitlab": {
                 "link": "https://gitlab.com/BenderTheHuman",
                 "desc": "Checkout my Gitlab"
             },
-            "GitHub": {
+            "github": {
                 "link": "https://github.com/Benderjrk",
                 "desc": "Checkout my GitHub"
             }

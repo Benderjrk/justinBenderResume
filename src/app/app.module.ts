@@ -6,11 +6,13 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './nav.component';
+import { AppContactComponent } from './contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppNavComponent
+    AppNavComponent,
+    AppContactComponent
   ],
   imports: [
     BrowserModule,

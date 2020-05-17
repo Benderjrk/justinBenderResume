@@ -48,7 +48,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.demoLinks = this.links.Links.demos;
-    this.onlineLinks = this.links.online;
     // SEO metadata
     this.title.setTitle("Justin Bender");
     this.meta.addTag({

@@ -29,6 +29,7 @@ import { Component, OnInit } from "@angular/core";
       }
     </style>
     <div class="nameLogo col-sm-8 col-md-5 ml-auto">Just<span id="in-in-name">in</span> Bender</div>
+    <app-contact class="row col-sm-5 col-md-4 col-lg-3 ml-auto"></app-contact>
     <nav class="row d-none d-sm-block">
       
       <div class="row col-sm-8">
