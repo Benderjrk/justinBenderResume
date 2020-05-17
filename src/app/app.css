@@ -31,8 +31,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
+  border-radius: 80%;
+  border-top: 4px solid #501c78;
+  border-bottom: 4px solid #70deda;
+  border-left: 4px solid #501c78;
+  border-right: 4px solid #70deda;
   min-height: 300px;
-  opacity: .75;
+  opacity: .60;
 }
 
 @media only screen and (max-width: 575px) {

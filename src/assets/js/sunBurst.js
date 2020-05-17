@@ -25,10 +25,20 @@ This variant of a [sunburst diagram](/@d3/sunburst) shows only two layers of the
     .selectAll("path")
     .data(root.descendants().slice(1))
     .join("path")
-      .attr("fill", d => { while (d.depth > 1) d = d.parent; return color(d.data.name); })
-      .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.6 : 0.4) : 0)
+      .attr("fill", d => { 
+        while (d.depth > 1) {
+          console.log(d.data);
+          d = d.parent;
+          return '#501c78'; 
+        }
+          return '#000000';
+      })
+      .attr("stroke", d => { 
+          return '#0e7575';
+      })
+      .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.8 : 0.4) : 0)
       .attr("d", d => arc(d.current));
-
+      
   path.filter(d => d.children)
       .style("cursor", "pointer")
       .on("click", clicked);
@@ -44,6 +54,9 @@ This variant of a [sunburst diagram](/@d3/sunburst) shows only two layers of the
     .data(root.descendants().slice(1))
     .join("text")
       .attr("dy", "0.35em")
+      .attr("fill", d => {return '#70deda';})
+      .attr("font-family", d => {return 'aquire-bold';})
+      .attr("font-size", d => {return '15px';})
       .attr("fill-opacity", d => +labelVisible(d.current))
       .attr("transform", d => labelTransform(d.current))
       .text(d => d.data.name);
