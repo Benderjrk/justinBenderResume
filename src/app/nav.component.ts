@@ -3,8 +3,30 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-nav",
   template: `
-    <div class="col-sm-3 ml-auto nameLogo">Justin Bender</div>
-    <nav class="row  d-none d-sm-block">
+    <style>
+      nav{
+        border-bottom: 4px solid #0e7575;
+      }
+      .btn{
+        color: #0e7575;
+        font-family: aquire-thin;
+      }
+      .btn:hover{
+        color: purple;
+        border-top: 1px solid #70deda;
+        border-left: 1px solid #70deda;
+        border-right: 1px solid #70deda;
+      }
+      .nameLogo{
+        color: #70deda;
+        font-family: aquire;
+        font-size: 40px;
+        position: relative;
+        margin-left: auto
+      }
+    </style>
+    <div class="nameLogo col-sm-8 col-md-5 ml-auto">Justin Bender</div>
+    <nav class="row d-none d-sm-block">
       
       <div class="row col-sm-8">
         <div class="m-auto">
@@ -21,12 +43,7 @@ import { Component, OnInit } from "@angular/core";
         </div>
       </div>
     </nav>
-  `,
-  styles: [
-      "nav{ border-bottom: 4px solid #70deda;}",
-      ".btn{ color: #70deda;}",
-      ".nameLogo{ color: #70deda;}"
-    ],
+  `
 })
 export class AppNavComponent implements OnInit {
   constructor() {}

@@ -29,6 +29,7 @@
   background-size: cover;
   background-position: center top;
   min-height: 300px;
+  opacity: 80%;
 }
 .skills-about {
   min-height: 150px;
@@ -40,4 +41,10 @@
 
 .rotating-shape {
   z-index: 0;
+}
+
+.demos-title {
+    color: #70deda;
+    font-family: aquire-normal;
+    margin-top: 20px;
 }
