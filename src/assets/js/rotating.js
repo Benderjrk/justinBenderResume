@@ -45,7 +45,7 @@ export default function define(runtime, observer) {
             context.beginPath();
             drawTriangle(t);
             context.fillStyle = d3.interpolateHslLong("black", "#0f0417")(faces[t.index][0][0] / 100);
-            context.strokeStyle = d3.interpolateHslLong("#0e7575", "#0e7575")(faces[t.index][0][0] / 100);
+            context.strokeStyle = d3.interpolateHslLong("#70deda", "#70deda")(faces[t.index][0][0] / 100);
             context.fill();
           }
 

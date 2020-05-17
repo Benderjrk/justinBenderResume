@@ -16,6 +16,7 @@ This variant of a [sunburst diagram](/@d3/sunburst) shows only two layers of the
 
   const svg = d3.create("svg")
       .attr("viewBox", [0, 0, width, width])
+      .attr("preserveAspectRatio", "xMidYMid meet")
       .style("font", "10px sans-serif");
 
   const g = svg.append("g")

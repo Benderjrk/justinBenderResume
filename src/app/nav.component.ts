@@ -5,10 +5,10 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <style>
       nav{
-        border-bottom: 4px solid #0e7575;
+        border-bottom: 4px solid #70deda;
       }
       .btn{
-        color: #0e7575;
+        color: #70deda;
         font-family: aquire-thin;
       }
       .btn:hover{
@@ -24,8 +24,11 @@ import { Component, OnInit } from "@angular/core";
         position: relative;
         margin-left: auto
       }
+      #in-in-name {
+        color: #672991;
+      }
     </style>
-    <div class="nameLogo col-sm-8 col-md-5 ml-auto">Justin Bender</div>
+    <div class="nameLogo col-sm-8 col-md-5 ml-auto">Just<span id="in-in-name">in</span> Bender</div>
     <nav class="row d-none d-sm-block">
       
       <div class="row col-sm-8">

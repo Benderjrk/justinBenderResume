@@ -3,8 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>JustinBender</title>
+  <script>
+    // self-invoked wrapper for scoping the `document` variable
+    !function( d ) {
+        if( !d.currentScript ){
+            var s = d.createElement( 'script' );
+            s.src = 'https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,Object.prototype.remove,URL';
+            d.head.appendChild(s);
+        }
+    }(document)
+  </script>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
