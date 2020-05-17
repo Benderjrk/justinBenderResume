@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 
 import {
   trigger,
@@ -36,9 +35,7 @@ export class AppComponent implements OnInit {
   public demoLinks = {}
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private title: Title,
-    private meta: Meta
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   @HostListener('window:scroll', [])
@@ -48,54 +45,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.demoLinks = this.links.Links.demos;
-    // SEO metadata
-    this.title.setTitle("Justin Bender");
-    this.meta.addTag({
-      name: "description",
-      content:
-        "Justin Bender would like to present himself to the world of opportunity.",
-    });
-
-    // facebook metadata
-    this.meta.addTag({
-      name: "og:url",
-      content: "https://www.benderjustin.com",
-    });
-    this.meta.addTag({ name: "og:title", content: "Justin Bender's page" });
-    this.meta.addTag({
-      name: "og:description",
-      content:
-        "Justin Bender would like to present himself to the world of opportunity.",
-    });
-    this.meta.addTag({
-      name: "og:image",
-      content: "https://www.benderjustin.com/assets/justinb.jpg",
-    });
-
-    // Twitter metadata
-    this.meta.addTag({ name: "twitter:card", content: "summary" });
-    this.meta.addTag({
-      name: "twitter:site",
-      content: "https://www.benderjustin.com",
-    });
-    this.meta.addTag({
-      name: "twitter:title",
-      content: "Justin Bender's page",
-    });
-    this.meta.addTag({
-      name: "twitter:description",
-      content:
-        "Justin Bender would like to present himself to the world of opportunity.",
-    });
-    this.meta.addTag({
-      name: "twitter:text:description",
-      content:
-        "Justin Bender would like to present himself to the world of opportunity.",
-    });
-    this.meta.addTag({
-      name: "twitter:image",
-      content: "https://www.benderjustin.com/assets/justinb.jpg",
-    });
   }
 
   @ViewChild('skillsChart') skillsChart: ElementRef;
