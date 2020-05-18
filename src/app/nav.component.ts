@@ -43,7 +43,7 @@ import { Component, OnInit } from "@angular/core";
           <a pageScroll href="#demo-section" class="btn">Hosted Demos</a>
         </div>
         <div class="m-auto">
-          <a pageScroll href="#contact-section" class="btn">Get In Touch</a>
+          <a pageScroll href="#resume-section" class="btn">Download Resumé</a>
         </div>
       </div>
     </nav>
