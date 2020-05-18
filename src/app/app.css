@@ -25,9 +25,8 @@
   height: 200px;
 }
 .justin-image {
-  z-index: 99999;
   background-color: blue;
-  background: #333 url(../assets/pics/justinBed.png);
+  background: #333 url(../assets/pics/rock-on.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -54,6 +53,26 @@
 #skill-section {
     padding-top: 50px;
 }
+@media only screen and (max-width: 1080px) {
+  #skill-section {
+    padding-top: 480px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #skill-section {
+    padding-top: 660px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  #skill-section {
+    padding-top: 900px;
+  }
+}
+@media only screen and (max-width: 490px) {
+  #skill-section {
+    padding-top: 950px;
+  }
+}
 
 .demo-cards {
     background-color: transparent;
@@ -70,7 +89,7 @@
   }
 
 .rotating-shape {
-  z-index: 0;
+  z-index: 1;
 }
 
 .demos-title {
