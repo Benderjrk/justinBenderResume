@@ -11,7 +11,8 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.js"
+          "/*.js",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
     }, {
@@ -25,8 +26,7 @@
           "/assets/css/**",
           "/assets/js/**",
           "/assets/json/**",
-          "/assets/icons/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+          "/assets/icons/**"
         ]
       }
     }
