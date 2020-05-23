@@ -34,16 +34,16 @@ import { Component, OnInit } from "@angular/core";
       
       <div class="row col-sm-8">
         <div class="m-auto">
-          <a pageScroll href="#welcome-section" class="btn">Welcome</a>
+          <a aria-label="Welcome Nav" pageScroll href="#welcome-section" class="btn">Welcome</a>
         </div>
         <div class="m-auto">
-          <a pageScroll href="#skill-section" class="btn">Skills</a>
+          <a aria-label="Skills Nav" pageScroll href="#skill-section" class="btn">Skills</a>
         </div>
         <div class="m-auto">
-          <a pageScroll href="#demo-section" class="btn">Hosted Demos</a>
+          <a aria-label="Hosted Demos Nav" pageScroll href="#demo-section" class="btn">Hosted Demos</a>
         </div>
         <div class="m-auto">
-          <a pageScroll href="#resume-section" class="btn">Download Resumé</a>
+          <a aria-label="Download Resume Nav" pageScroll href="#resume-section" class="btn">Download Resumé</a>
         </div>
       </div>
     </nav>
