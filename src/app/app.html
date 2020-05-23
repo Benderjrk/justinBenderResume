@@ -1,9 +1,9 @@
 <div class="container-fluid">
-  <p *ngIf="updateForServiceWorker === true">
-    <ngb-alert class="info-bar text-center" type='success' (close)="closeAlert()">New version available. Load New Version...
-      <button class="btn btn-outline-success" (click)="updateSW()">Reload</button>
-    </ngb-alert>
-</p>
+  <div *ngIf="updateForServiceWorker === true" class="update-service-worker d-flex align-items-center justify-content-center">
+    <button class="btn btn-outline-bender" (click)="updateSW()">
+      This application uses a service worker and it has been updated. To remove this overlay reload page or click here
+    </button>
+  </div>
 
   <app-nav></app-nav>
   <div class="row the-welcome-section">

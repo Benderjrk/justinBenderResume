@@ -118,3 +118,26 @@
   color: #70deda;
   font-family: aquire-normal;
 }
+
+.update-service-worker {
+  border: 2px solid #70deda;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  background-color: rgba(39, 20, 46, .8);
+  height: 80vh;
+  width: 80vw;
+  z-index: 5;
+}
+
+.btn-outline-bender {
+  border: 2px solid #70deda;
+  color: #70deda;
+  font-family: aquire-normal;
+}
+
+.btn-outline-bender:hover {
+  color: #672991;
+}

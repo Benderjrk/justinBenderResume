@@ -37,7 +37,8 @@ export class AppComponent implements OnInit {
   public updateForServiceWorker = false;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private swUpdate: SwUpdate
   ) {}
 
   @HostListener('window:scroll', [])
@@ -46,6 +47,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(() => {
+        this.updateForServiceWorker = true;
+      });
+  }
     this.demoLinks = this.links.Links.demos;
   }
 

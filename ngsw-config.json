@@ -20,8 +20,12 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+          "/assets/pics/rock-on.jpg",
+          "/assets/fonts/**",
+          "/assets/css/**",
+          "/assets/js/**",
+          "/assets/json/**",
+          "/assets/icons/**"
         ]
       }
     }

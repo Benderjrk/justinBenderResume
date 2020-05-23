@@ -1,8 +1,10 @@
 {
-  "name": "justinBender",
-  "short_name": "justinBender",
+  "name": "Justin Bender",
+  "short_name": "Justin Bender",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "background_color": "#70deda",
+  "description": "A collection of Justin Bender's non-private works cultivated into one area.",
+  "orientation": "any",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
@@ -57,3 +59,4 @@
     }
   ]
 }
+
