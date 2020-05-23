@@ -1,4 +1,10 @@
 <div class="container-fluid">
+  <p *ngIf="updateForServiceWorker === true">
+    <ngb-alert class="info-bar text-center" type='success' (close)="closeAlert()">New version available. Load New Version...
+      <button class="btn btn-outline-success" (click)="updateSW()">Reload</button>
+    </ngb-alert>
+</p>
+
   <app-nav></app-nav>
   <div class="row the-welcome-section">
     <div class="about-justin col-sm-6 col-sx-11 col-md-8" id="welcome-section">

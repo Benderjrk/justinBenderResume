@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
+import { SwUpdate } from '@angular/service-worker';
 
 import {
   trigger,
@@ -33,6 +34,7 @@ export class AppComponent implements OnInit {
   public cardsInView = false;
   public onlineLinks = {}
   public demoLinks = {}
+  public updateForServiceWorker = false;
 
   constructor(
     @Inject(DOCUMENT) private document: Document
@@ -75,4 +77,10 @@ export class AppComponent implements OnInit {
     event.stopPropagation();
     window.scrollTo(0, 0);
   }
+
+  updateSW() {
+    this.updateForServiceWorker = false;
+    window.location.reload();
+  }
+
 }
