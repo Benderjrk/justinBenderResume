@@ -7,6 +7,8 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './nav.component';
 import { AppContactComponent } from './contact.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { AppContactComponent } from './contact.component';
   imports: [
     BrowserModule,
     NgxPageScrollModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
