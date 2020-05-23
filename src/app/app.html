@@ -23,7 +23,7 @@
         <div class="card-body">
           <h5 class="card-title">{{links.Links.flow.name}}</h5>
           <p class="card-text">{{links.Links.flow.desc}}</p>
-          <a target="_blank" rel="noopener noreferrer" href="{{links.Links.flow.link}}" class="card-link demo-card-link"
+          <a name="{{ links.Links.flow.name }} link" target="_blank" rel="noopener noreferrer" href="{{links.Links.flow.link}}" class="card-link demo-card-link"
             >Navigate To {{links.Links.flow.name}}</a
           >
         </div>
@@ -35,7 +35,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ demo.key }}</h5>
           <p class="card-text">{{demo.value.desc}}</p>
-          <a target="_blank" rel="noopener noreferrer" href="{{demo.value.link}}" class="card-link demo-card-link">Navigate To Page</a>
+          <a name="{{ demo.key }} link" target="_blank" rel="noopener noreferrer" href="{{demo.value.link}}" class="card-link demo-card-link">Navigate To Page</a>
         </div>
       </div>
     </div>

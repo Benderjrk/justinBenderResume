@@ -15,7 +15,7 @@ import * as profileLinks from "../assets/json/links.json";
             *ngFor="let link of onlineLinks | keyvalue"
             class=""
         >
-        <a target="_blank" rel="noopener noreferrer" href="{{link.value.link}}">
+        <a name="{{ link.key }} link" target="_blank" rel="noopener noreferrer" href="{{link.value.link}}">
             <i class="social-media-links fa fa-{{ link.key }} fa-2x ml-4 mr-4"></i>
         </a>
         
