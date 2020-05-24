@@ -40,6 +40,20 @@
       </div>
     </div>
   </div>
+  <div class="row pdf-certs d-flex justify-content-center">
+    <div
+          *ngFor="let pdf of pdfsForDisplay; let i = index" 
+          class=""
+      >
+        <iframe 
+          [src]="pdfSrcs[i]"  
+          width="100%" 
+          height="210px" 
+          frameborder="0" 
+          allowtransparency="true">
+        </iframe>
+    </div>
+  </div>
   <div class="row download-section justify-content-center text-center">
     <div class="download-label col-sm-12">
       Download Justin's Resumé

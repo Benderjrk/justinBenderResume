@@ -1,5 +1,4 @@
 import { Component, AfterViewInit, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
-import { ActivatedRoute, Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 
 import {
@@ -17,6 +16,7 @@ import notebookFirst from "../assets/js/rotating.js";
 import * as profileLinks from "../assets/json/links.json";
 
 import { DOCUMENT } from "@angular/common";
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: "app-root",
@@ -36,10 +36,23 @@ export class AppComponent implements OnInit, AfterViewInit {
   public onlineLinks = {}
   public demoLinks = {}
   public updateForServiceWorker = false;
+  public pdfSrcs = [];
+
+  public pdfsForDisplay = [
+    'd3js-course.pdf',
+    'javascript-algor-course.pdf',
+    'nodejs-course.pdf',
+    'php-security-certificate.pdf',
+    'nodejs-security-course.pdf',
+    'M101JS - Course Completion Confirmation.pdf',
+    'bootstrap4.pdf',
+    'Angular2+QuickCourse.pdf'
+]
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private swUpdate: SwUpdate
+    private swUpdate: SwUpdate,
+    public sanitizer: DomSanitizer
   ) {}
 
   @HostListener('window:scroll', [])
@@ -56,6 +69,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         this.updateForServiceWorker = true;
       });
   }
+    for (let [i, v] of this.pdfsForDisplay.entries()) {
+      console.log(i, v)
+      this.pdfSrcs[i] = this.sanitizer.bypassSecurityTrustResourceUrl(`./assets/pdf/${v}#zoom=0,0,390`)
+    }
     this.demoLinks = this.links.Links.demos;
   }
 
@@ -90,6 +107,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   updateSW() {
     this.updateForServiceWorker = false;
     this.document.location.reload();
+  }
+
+  getPDFSrc(pdf) {
+    console.log(`./assets/pdf/${pdf}`);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`./assets/pdf/${pdf}`)
   }
 
 }

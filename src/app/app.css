@@ -1,5 +1,4 @@
 .container-fluid {
-  width: 100vw;
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
@@ -143,4 +142,8 @@
 
 .btn-outline-bender:hover {
   color: #672991;
+}
+
+.pdf-certs {
+  min-height: 200px;
 }
