@@ -43,7 +43,7 @@
   <div class="row pdf-certs d-flex justify-content-center">
     <div
           *ngFor="let pdf of pdfsForDisplay; let i = index" 
-          class=""
+          class="pdf-iframes d-none d-xl-block" 
       >
         <iframe 
           [src]="pdfSrcs[i]"  

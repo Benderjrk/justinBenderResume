@@ -70,8 +70,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
   }
     for (let [i, v] of this.pdfsForDisplay.entries()) {
-      console.log(i, v)
-      this.pdfSrcs[i] = this.sanitizer.bypassSecurityTrustResourceUrl(`./assets/pdf/${v}#zoom=0,0,390`)
+      this.pdfSrcs[i] = this.sanitizer.bypassSecurityTrustResourceUrl(`./assets/pdf/${v}#zoom=0,0,450`)
     }
     this.demoLinks = this.links.Links.demos;
   }
