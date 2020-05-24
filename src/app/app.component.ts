@@ -1,4 +1,5 @@
-import { Component, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
+import { Component, AfterViewInit, OnInit, Inject, HostListener, ViewChild, ElementRef } from "@angular/core";
+import { ActivatedRoute, Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 
 import {
@@ -29,7 +30,7 @@ import { DOCUMENT } from "@angular/common";
   ],
   styleUrls: ["./app.css"]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   public links: any = (profileLinks as any).default;
   public cardsInView = false;
   public onlineLinks = {}
@@ -46,6 +47,9 @@ export class AppComponent implements OnInit {
       this.areCardsInView();
   }
 
+  @ViewChild('skillsChart') skillsChart: ElementRef;
+  @ViewChild('rotatingShape') rotatingShape: ElementRef;
+
   ngOnInit() {
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(() => {
@@ -55,8 +59,7 @@ export class AppComponent implements OnInit {
     this.demoLinks = this.links.Links.demos;
   }
 
-  @ViewChild('skillsChart') skillsChart: ElementRef;
-  @ViewChild('rotatingShape') rotatingShape: ElementRef;
+  
   
   ngAfterViewInit() {
     const runtimeFirst = new Runtime();
@@ -86,7 +89,7 @@ export class AppComponent implements OnInit {
 
   updateSW() {
     this.updateForServiceWorker = false;
-    window.location.reload();
+    this.document.location.reload();
   }
 
 }

@@ -9,12 +9,14 @@ import { AppNavComponent } from './nav.component';
 import { AppContactComponent } from './contact.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CertificatesComponent } from './certificates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppNavComponent,
-    AppContactComponent
+    AppContactComponent,
+    CertificatesComponent
   ],
   imports: [
     BrowserModule,
